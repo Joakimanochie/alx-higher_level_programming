@@ -1,9 +1,25 @@
 #!/usr/bin/python3
+
+"""
+This is the "Square"  module.
+This module provides a simple Square class defined by size "size"
+which must be an integer not less than or equal to zero.
+"""
+
+
 class Square:
-    """ A class that defines a square by its size
+    """
+    Square:
+    Class used to define a sqquare with size "size".
     """
     def __init__(self, size=0):
-        """ Method to initialize the square object
+        """
+        __init__:
+        Function to initialize object
+        Args:
+        self: Instance of object
+        size: Size of square
+        which must be an integer not less than or equal to zero.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -13,23 +29,35 @@ class Square:
             self.__size = size
 
     def area(self):
-        """ Method that returns the square are of the object
         """
-        return (self.__size ** 2)
+        area: returns area of square
+        Args:
+        self: Instance of object
+        Return: area of square object
+        """
+        return self.__size ** 2
 
     @property
     def size(self):
-        """ Method to returns the size value
+        """
+        size: getter function to access private instance variable "size".
+        Args:
+        self: instance of object
+        Return: the size variable
         """
         return self.__size
 
     @size.setter
-    def size(self, value):
-        """ Method to set the size value of the square object
+    def size(self, size):
         """
-        if not isinstance(value, int):
+        size: setter function for private instance variable "size"
+        Args:
+        self: instance of object
+        size: intended size to set
+        """
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self.__size = size
